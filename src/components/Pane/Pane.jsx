@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import { StyledPane } from './Pane.styles';
 import Button from '../Button/Button';
 import Progress from '../Progress/Progress';
+import { usePaneStore } from '../../zustand/stores/paneStore';
 
-const Pane = ({ title = 'Pane', expanded, onExpand, required = 0, available = 0 }) => {
-    const isExpanded = expanded;
+const Pane = ({ title = 'Pane', required = 0, available = 0 }) => {
+    const  { isExpanded } = usePaneStore((state) => state.expanded);
+    const { toggleExpand } = usePaneStore((state) => state.toggleExpand);
+
     const percentage = (required / available) * 100;
 
     const progressData = [
@@ -18,7 +21,7 @@ const Pane = ({ title = 'Pane', expanded, onExpand, required = 0, available = 0 
 
     return (
         <StyledPane className={isExpanded ? 'expanded' : 'collapsed'}>
-            <button onClick={onExpand} className={isExpanded ? 'expanded header' : 'collapsed header'}>
+            <button onClick={toggleExpand} className={isExpanded ? 'expanded header' : 'collapsed header'}>
                 <span className='title'>{title}</span>
                 <span className={isExpanded ? 'expanded icon' : 'collapsed icon'}>
                     <svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
@@ -33,8 +36,8 @@ const Pane = ({ title = 'Pane', expanded, onExpand, required = 0, available = 0 
             </button>
             <div className='details'>
                 <ul>
-                    {progressData.map(({ value, label }, index) => (
-                        <Progress key={index} value={value.toString()} label={label} />
+                    {progressData.map(({ value, label }) => (
+                        <Progress key={label} value={value} label={label} />
                     ))}
                 </ul>
             </div>
@@ -44,10 +47,8 @@ const Pane = ({ title = 'Pane', expanded, onExpand, required = 0, available = 0 
 
 Pane.propTypes = {
     title: PropTypes.string,
-    expanded: PropTypes.bool,
-    onExpand: PropTypes.func,
-    required: PropTypes.number,
-    available: PropTypes.number,
+    required: PropTypes.number.isRequired,
+    available: PropTypes.number.isRequired,
 };
 
 export default Pane;
