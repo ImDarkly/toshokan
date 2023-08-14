@@ -1,8 +1,25 @@
 {
-    "regular_a3": 259,
-    "regular_a4": 176,
-    "regular_a5": 605,
-    "photo_a3": 164,
-    "photo_a4": 620,
-    "photo_a5": 403
-}
+    "paperTypes": [
+      {
+        "name": "Plain Paper",
+        "density": "80 gsm",
+        "sizes": ["A5", "A4", "A3"],
+        "stock": {
+          "A5": 200,
+          "A4": 300,
+          "A3": 100
+        }
+      },
+      {
+        "name": "Photo Paper",
+        "density": "250 gsm",
+        "sizes": ["A5", "A4", "A3"],
+        "stock": {
+          "A5": 150,
+          "A4": 250,
+          "A3": 80
+        }
+      }
+    ]
+  }
+  
