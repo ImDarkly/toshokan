@@ -20,6 +20,24 @@
           "A3": 80
         }
       }
+    ],
+    "inkTypes": [
+      {
+        "name": "Cyan",
+        "stock": 300
+      },
+      {
+        "name": "Magenta",
+        "stock": 300
+      },
+      {
+        "name": "Yellow",
+        "stock": 300
+      },
+      {
+        "name": "Black",
+        "stock": 500
+      }
     ]
   }
   
