@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react'; // Import useState to manage the 'isExpanded' state
 import PropTypes from 'prop-types';
 import { StyledPane } from './Pane.styles';
 import Button from '../Button/Button';
 import Progress from '../Progress/Progress';
-import { usePaneStore } from '../../zustand/stores/paneStore';
 
 const Pane = ({ title = 'Pane', required = 0, available = 0 }) => {
-    const  { isExpanded } = usePaneStore((state) => state.expanded);
-    const { toggleExpand } = usePaneStore((state) => state.toggleExpand);
+    // Initialize 'isExpanded' state and 'toggleExpand' function
+    const [isExpanded, setIsExpanded] = useState(false);
 
-    const percentage = (required / available) * 100;
+    // Define the 'toggleExpand' function to toggle the 'isExpanded' state
+    const toggleExpand = () => {
+        setIsExpanded(!isExpanded);
+    };
 
     const progressData = [
         { value: isExpanded ? 25 : 0, label: 'Photopaper, A3' },
@@ -37,7 +39,7 @@ const Pane = ({ title = 'Pane', required = 0, available = 0 }) => {
             <div className='details'>
                 <ul>
                     {progressData.map(({ value, label }) => (
-                        <Progress key={label} value={value} label={label} />
+                        <Progress key={label} value={value} label={label} />    
                     ))}
                 </ul>
             </div>

@@ -1,11 +1,11 @@
 import { StyledLabel } from "./Label.styles"
 
-const Pane = ({ label = "Label"}) => {
+const Label = ({ label = "Label"}) => {
     return (
-        <StyledLabel>
+        <StyledLabel className="label">
             <p>{ label }</p>
         </StyledLabel>
     )
 }
 
-export default Pane;
+export default Label;

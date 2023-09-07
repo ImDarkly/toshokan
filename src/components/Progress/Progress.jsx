@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledProgress } from './Progress.style';
+import Label from '../Label/Label';
 
-const Progress = ({ value = 0, label = 'Label' }) => {
+const Progress = ({ value = 0, label }) => {
     return (
         <StyledProgress value={value}>
-            <div className="label">
-                {label}
-            </div>
+            <Label label={ label } />
             <div className="amount">
                 <div className="progress-bar">
                     <span className="bar">
