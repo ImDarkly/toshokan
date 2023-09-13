@@ -1,31 +1,22 @@
-import React, { useState } from 'react'; // Import useState to manage the 'isExpanded' state
+import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledPane } from './Pane.styles';
-import Button from '../Button/Button';
 import Progress from '../Progress/Progress';
 
-const Pane = ({ title = 'Pane', required = 0, available = 0 }) => {
-    // Initialize 'isExpanded' state and 'toggleExpand' function
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    // Define the 'toggleExpand' function to toggle the 'isExpanded' state
-    const toggleExpand = () => {
-        setIsExpanded(!isExpanded);
-    };
-
+const Pane = ({ title = 'Pane', expanded, onExpand }) => {
     const progressData = [
-        { value: isExpanded ? 25 : 0, label: 'Photopaper, A3' },
-        { value: isExpanded ? 90 : 0, label: 'Cyan' },
-        { value: isExpanded ? 9 : 0, label: 'Magenta' },
-        { value: isExpanded ? 67 : 0, label: 'Yellow' },
-        { value: isExpanded ? 100 : 0, label: 'Black' },
+        { value: expanded ? 25 : 0, label: 'Photopaper, A3' },
+        { value: expanded ? 90 : 0, label: 'Cyan' },
+        { value: expanded ? 9 : 0, label: 'Magenta' },
+        { value: expanded ? 67 : 0, label: 'Yellow' },
+        { value: expanded ? 100 : 0, label: 'Black' },
     ];
 
     return (
-        <StyledPane className={isExpanded ? 'expanded' : 'collapsed'}>
-            <button onClick={toggleExpand} className={isExpanded ? 'expanded header' : 'collapsed header'}>
+        <StyledPane className={expanded ? 'expanded' : 'collapsed'}>
+            <button onClick={onExpand} className={expanded ? 'expanded header' : 'collapsed header'}>
                 <span className='title'>{title}</span>
-                <span className={isExpanded ? 'expanded icon' : 'collapsed icon'}>
+                <span className={expanded ? 'expanded icon' : 'collapsed icon'}>
                     <svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
                         <g mask={`url(#mask0)`}>
                             <rect width='24' height='24' fill='transparent' mask='url(#mask0)' />
@@ -39,7 +30,7 @@ const Pane = ({ title = 'Pane', required = 0, available = 0 }) => {
             <div className='details'>
                 <ul>
                     {progressData.map(({ value, label }) => (
-                        <Progress key={label} value={value} label={label} />    
+                        <Progress key={label} value={value} label={label} />
                     ))}
                 </ul>
             </div>
@@ -49,8 +40,8 @@ const Pane = ({ title = 'Pane', required = 0, available = 0 }) => {
 
 Pane.propTypes = {
     title: PropTypes.string,
-    required: PropTypes.number.isRequired,
-    available: PropTypes.number.isRequired,
+    expanded: PropTypes.bool,
+    onExpand: PropTypes.func,
 };
 
 export default Pane;

@@ -108,12 +108,10 @@ export const StyledPane = styled.li`
     }
 
     &.collapsed .details {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
         max-height: 0rem;
     }
 
     &.expanded .details {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         max-height: 32rem;
     }
 `;
