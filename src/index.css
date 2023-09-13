@@ -42,14 +42,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #E2E8F0;
+  background: var(--blue-100, #DBEAFE);
   outline: white 2px solid;
   outline-offset: -2px;
   border-radius: 16px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2196F3;
+  background: var(--primary, #2196F3);
   border-radius: 16px;
 }
 

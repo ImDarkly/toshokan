@@ -1,4 +1,4 @@
 .accordion-container{
-    overflow-y: auto;
-    height: calc(100vh - 112px);
+    overflow-y: overlay;
+    height: calc(100dvh - 112px);
   }
