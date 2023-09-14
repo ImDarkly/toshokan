@@ -1,0 +1,13 @@
+[
+    { 
+        "id": 1, 
+        "title": "The Alchemist", 
+        "status": "queued", 
+        "paper": {
+            "name": "Plain paper",
+            "density": "80 gsm",
+            "size": "A4"
+        },
+        "type": "Black and white"
+    }
+]

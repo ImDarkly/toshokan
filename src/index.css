@@ -42,7 +42,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--blue-100, #DBEAFE);
+  background: var(--blue-200, #BFDBFE);
   outline: white 2px solid;
   outline-offset: -2px;
   border-radius: 16px;
