@@ -1,0 +1,43 @@
+{
+    "paperTypes": [
+      {
+        "name": "Plain paper",
+        "density": "80 gsm",
+        "sizes": ["A5", "A4", "A3"],
+        "stock": {
+          "A5": 200,
+          "A4": 300,
+          "A3": 100
+        }
+      },
+      {
+        "name": "Photo paper",
+        "density": "250 gsm",
+        "sizes": ["A5", "A4", "A3"],
+        "stock": {
+          "A5": 150,
+          "A4": 250,
+          "A3": 80
+        }
+      }
+    ],
+    "inkTypes": [
+      {
+        "name": "Cyan",
+        "stock": 300
+      },
+      {
+        "name": "Magenta",
+        "stock": 300
+      },
+      {
+        "name": "Yellow",
+        "stock": 300
+      },
+      {
+        "name": "Black",
+        "stock": 500
+      }
+    ]
+  }
+  

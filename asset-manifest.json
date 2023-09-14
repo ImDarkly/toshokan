@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/toshokan/static/css/main.80f66b21.css",
+    "main.js": "/toshokan/static/js/main.de712c36.js",
+    "index.html": "/toshokan/index.html",
+    "main.80f66b21.css.map": "/toshokan/static/css/main.80f66b21.css.map",
+    "main.de712c36.js.map": "/toshokan/static/js/main.de712c36.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80f66b21.css",
+    "static/js/main.de712c36.js"
+  ]
+}
