@@ -37,6 +37,7 @@
 
 
 ::-webkit-scrollbar {
+  display: none;
   width: 8px;
   cursor: pointer;
 }
@@ -61,7 +62,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   user-select: none;
-  overflow: hidden;
 }
 
 code {
@@ -79,6 +79,8 @@ p {
 }
 
 .container{
-  overflow-y: auto;
-  height: calc(100vh - 112px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100dvh;
 }

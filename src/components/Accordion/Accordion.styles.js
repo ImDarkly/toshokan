@@ -6,10 +6,10 @@ export const StyledAccordion = styled.ul`
     align-items: center;
     gap: 0.25rem;
     flex: 1 0 0;
-    border-radius: 1rem;
-    min-height: 3rem;
-    margin: 1rem 1rem;
+    height: 100%;
+    margin: 0 1rem;
     padding: 0;
+    padding-bottom: 1rem;
     list-style: none;
-    overflow: hidden;
+    overflow-y: auto;
 `

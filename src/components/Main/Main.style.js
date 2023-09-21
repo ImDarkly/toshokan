@@ -3,15 +3,10 @@ import styled from 'styled-components';
 export const StyledTabbar = styled.div`
     display: flex;
     position: relative;
-    justify-content: space-between;
-    flex-direction: row;
-    height: 48px; 
-    background: var(--100-secondary, #E0E5EA);
-    padding: 0rem 1rem;
-    align-items: center;
+    flex-direction: column;
     overflow-x: scroll;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory;
+    height: 100%;
     scroll-snap-align: center;
 
     &::-webkit-scrollbar { 
