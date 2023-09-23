@@ -1,5 +1,5 @@
 import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
-import { LogoIcon } from "../../assets/icons/LogoIcon";
+import { LogoIcon } from "../../assets/icons/logoIcon";
 import { Logout } from "../../assets/icons/Logout";
 
 const Topbar = () => {

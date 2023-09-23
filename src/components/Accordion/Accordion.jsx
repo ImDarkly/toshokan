@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyledAccordion } from './Accordion.styles';
 import { useSelector } from 'react-redux';
 import './Accordion.css'
-import { Accordion as UseAccordion, AccordionItem, Progress, Button, Link, Popover, PopoverTrigger, PopoverContent } from '@nextui-org/react';
+import { Accordion as UseAccordion, AccordionItem, Progress, Button, Link, Tooltip, Popover, PopoverTrigger, PopoverContent } from '@nextui-org/react';
 import { ContentCopy } from '../../assets/icons/ContentCopy';
 
 const Accordion = ({ status }) => {
     const orders = useSelector(store => store.orders);
+    const copy = navigator.clipboard.writeText;
     const progressData = [
         { value: 25, label: 'Photopaper, A3' },
         { value: 90, label: 'Cyan' },
@@ -15,8 +16,8 @@ const Accordion = ({ status }) => {
         { value: 100, label: 'Black' },
     ];
 
-    const copyTitle = (title) => {
-        navigator.clipboard.writeText(title)
+    const copyTitle = async (title) => {
+        copy(title)
         .then(() => {
             console.log('Text copied to clipboard:', title);
           })
@@ -36,17 +37,22 @@ const Accordion = ({ status }) => {
                         key={order.id}
                         title={order.title}
                         startContent={
-                            <Popover color='default' shouldBlockScroll>
-                                <PopoverTrigger>
-                                    <Button onClick={() => copyTitle(order.title)} isIconOnly as={Link} color="default" variant="light">
-                                        <ContentCopy />
-                                    </Button>
-                                </PopoverTrigger>
-                                <PopoverContent >
-                                    <p>Title</p>
-                                    <p>coppied!</p>
-                                </PopoverContent>
-                            </Popover>
+                            <Tooltip 
+                                content={
+                                    "Copy title!"
+                                    }>
+                                    <Popover shouldBlockScroll>
+                                        <PopoverTrigger>
+                                            <Button onClick={() => copyTitle(order.title)} isIconOnly as={Link} color="default" variant="light">
+                                                <ContentCopy />
+                                            </Button>
+                                        </PopoverTrigger>
+                                        <PopoverContent>
+                                            <p>Title</p>
+                                            <p>copied!</p>
+                                        </PopoverContent>
+                                    </Popover>
+                            </Tooltip>
                         }
                         className='group-[.is-splitted]:rounded group-[.is-splitted]:shadow-none group-[.is-splitted]:bg-slate-100 group-[.is-splitted]:first:rounded-t-2xl group-[.is-splitted]:last:rounded-b-2xl'
                         classNames={{

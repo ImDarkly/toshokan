@@ -15,11 +15,11 @@ const Tabbar = () => {
   return (
       <StyledTabbar className="flex w-full flex-col">
         <Tabs 
-          className="h-16 flex justify-around p-0" 
+          className="h-16 bg-slate-100 flex justify-around p-0" 
           variant="underlined"
           border="lg"
           classNames={{
-            tabList: "h-full p-0 gap-16 bg-slate-100 h-16 sticky top-0 px-6",
+            tabList: "h-full p-0 gap-16 h-16 sticky top-0 px-6",
             cursor: "rounded-t h-1 bg-primary-400",
             panel: "p-0 overflow-y-auto"
           }}>
