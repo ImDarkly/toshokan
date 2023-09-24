@@ -49,7 +49,7 @@ const Accordion = ({ status }) => {
                             }
                         >
                             <Button onClick={() => copyTitle(order.title, order.id)} isIconOnly as={Link} color="default" variant="light">
-                                {copiedTitle === order.id ? <TickIcon color="text-slate-400" /> : <ContentCopy color="text-slate-400" />}
+                                {copiedTitle === order.id ? <TickIcon styles={"text-slate-400"} /> : <ContentCopy styles={"text-slate-400"} />}
                             </Button>
                         </Tooltip>
                     }

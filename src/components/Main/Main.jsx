@@ -1,6 +1,5 @@
 import React from "react";
 import {Tabs, Tab} from "@nextui-org/tabs";
-import { StyledTabbar } from "./Main.style";
 import Accordion from "../Accordion/Accordion";
 
 const Tabbar = () => {
@@ -13,29 +12,27 @@ const Tabbar = () => {
   ];
 
   return (
-      <StyledTabbar className="flex w-full flex-col">
-        <Tabs 
-          className="h-16 bg-slate-100 flex justify-around p-0" 
-          variant="underlined"
-          border="lg"
-          classNames={{
-            tabList: "h-full p-0 gap-16 h-16 sticky top-0 px-4",
-            cursor: "rounded-t h-1 bg-primary-400",
-            panel: "p-0 overflow-y-auto"
-          }}>
-          {tabs.map((tab) => (
-            <Tab
-              className="text-base h-full"
-              key={tab.id}
-              title={
-                <span className="group-data-[selected=true]:text-primary-400 text-slate-400">{tab.label}</span>
-              }
-            >
-              <Accordion status={tab.label}/>
-            </Tab>
-          ))}
-        </Tabs>
-      </StyledTabbar>
+    <Tabs 
+      className="h-16 bg-slate-100 flex justify-around p-0" 
+      variant="underlined"
+      border="lg"
+      classNames={{
+        tabList: "h-full p-0 gap-16 h-16 sticky top-0 px-4",
+        cursor: "rounded-t h-1 bg-primary-400",
+        panel: "p-0 overflow-y-auto"
+      }}>
+      {tabs.map((tab) => (
+        <Tab
+          className="text-base h-full"
+          key={tab.id}
+          title={
+            <span className="group-data-[selected=true]:text-primary-400 text-slate-400">{tab.label}</span>
+          }
+        >
+          <Accordion status={tab.label}/>
+        </Tab>
+      ))}
+    </Tabs>
   );
 };
 

@@ -1,6 +1,6 @@
 import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
-import { LogoIcon } from "../../assets/icons/logoIcon";
-import { Logout } from "../../assets/icons/LogoutIcon";
+import { LogoIcon } from "../../assets/icons/LogoIcon";
+import { LogoutIcon } from "../../assets/icons/LogoutIcon";
 
 const Topbar = () => {
     return (
@@ -13,7 +13,7 @@ const Topbar = () => {
             }}
             >
             <NavbarBrand>
-                <LogoIcon />
+                <LogoIcon size={28} styles={"text-white bg-primary-400 p-1 rounded-lg"} />
             </NavbarBrand>
             <NavbarBrand className="justify-center">
                 <p className="font-medium text-2xl text-inherit">Toshokan</p>
@@ -21,7 +21,7 @@ const Topbar = () => {
             <NavbarContent justify="end">
                 <NavbarItem>
                     <Button isIconOnly as={Link} color="danger" href="#" variant="light">
-                        <Logout />
+                        <LogoutIcon size={28} />
                     </Button>
                 </NavbarItem>
             </NavbarContent>
