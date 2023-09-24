@@ -19,7 +19,7 @@ const Tabbar = () => {
           variant="underlined"
           border="lg"
           classNames={{
-            tabList: "h-full p-0 gap-16 h-16 sticky top-0 px-6",
+            tabList: "h-full p-0 gap-16 h-16 sticky top-0 px-4",
             cursor: "rounded-t h-1 bg-primary-400",
             panel: "p-0 overflow-y-auto"
           }}>

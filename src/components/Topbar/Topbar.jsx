@@ -1,10 +1,17 @@
 import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
 import { LogoIcon } from "../../assets/icons/logoIcon";
-import { Logout } from "../../assets/icons/Logout";
+import { Logout } from "../../assets/icons/LogoutIcon";
 
 const Topbar = () => {
     return (
-        <Navbar className="bg-slate-100" position="static">
+        <Navbar 
+            className="bg-slate-100" 
+            position="static" 
+            maxWidth="full"
+            classNames={{
+                wrapper: "px-4"
+            }}
+            >
             <NavbarBrand>
                 <LogoIcon />
             </NavbarBrand>
