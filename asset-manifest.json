@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/toshokan/static/css/main.9ab3cf19.css",
-    "main.js": "/toshokan/static/js/main.2a65d511.js",
+    "main.js": "/toshokan/static/js/main.c364ff9b.js",
     "index.html": "/toshokan/index.html",
     "main.9ab3cf19.css.map": "/toshokan/static/css/main.9ab3cf19.css.map",
-    "main.2a65d511.js.map": "/toshokan/static/js/main.2a65d511.js.map"
+    "main.c364ff9b.js.map": "/toshokan/static/js/main.c364ff9b.js.map"
   },
   "entrypoints": [
     "static/css/main.9ab3cf19.css",
-    "static/js/main.2a65d511.js"
+    "static/js/main.c364ff9b.js"
   ]
 }
