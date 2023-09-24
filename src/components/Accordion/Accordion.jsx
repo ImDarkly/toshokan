@@ -6,7 +6,6 @@ import { TickIcon } from '../../assets/icons/TickIcon';
 
 const Accordion = ({ status }) => {
     const orders = useSelector(store => store.orders);
-    const copy = navigator.clipboard.writeText;
     const [copiedTitle, setCopiedTitle] = useState(null);
     
     const progressData = [
@@ -17,14 +16,14 @@ const Accordion = ({ status }) => {
         { value: 100, label: 'Black' },
     ];
 
-    const copyTitle = (title, orderId) => {
-        copy(title)
+    const copyTitle = (title) => {
+        navigator.clipboard.writeText(title)
         .then(() => {
             console.log('Text copied to clipboard:', title);
             setCopiedTitle(title);
             setTimeout(() => {
                 setCopiedTitle(null);
-            }, 500);
+            }, 1000);
           })
           .catch(err => {
             console.error('Could not copy text to clipboard:', err);
