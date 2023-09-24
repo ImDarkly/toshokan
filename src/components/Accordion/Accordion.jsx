@@ -16,11 +16,11 @@ const Accordion = ({ status }) => {
         { value: 100, label: 'Black' },
     ];
 
-    const copyTitle = (title) => {
+    const copyTitle = (title, orderId) => {
         navigator.clipboard.writeText(title)
         .then(() => {
             console.log('Text copied to clipboard:', title);
-            setCopiedTitle(title);
+            setCopiedTitle(orderId);
             setTimeout(() => {
                 setCopiedTitle(null);
             }, 1000);
@@ -49,7 +49,7 @@ const Accordion = ({ status }) => {
                             }
                         >
                             <Button onClick={() => copyTitle(order.title, order.id)} isIconOnly as={Link} color="default" variant="light">
-                                {copiedTitle === order.title ? <TickIcon color="text-slate-400" /> : <ContentCopy color="text-slate-400" />}
+                                {copiedTitle === order.id ? <TickIcon color="text-slate-400" /> : <ContentCopy color="text-slate-400" />}
                             </Button>
                         </Tooltip>
                     }
