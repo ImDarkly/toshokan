@@ -20,15 +20,14 @@ const Main = () => {
       classNames={{
         tabList: "h-full p-0 gap-16 h-16 sticky top-0 px-4",
         cursor: "rounded-t h-1 bg-primary-400",
-        panel: "p-0 overflow-y-auto",
-        tab: "group hover:bg-blue-50 rounded-t-lg"
+        panel: "p-0 overflow-y-auto"
       }}>
       {tabs.map((tab) => (
           <Tab
             className="text-base h-full"
             key={tab.id}
             title={
-              <span className="group-data-[selected=true]:text-primary-400 group-hover:text-primary-400 text-slate-400">
+              <span className="group-data-[selected=true]:text-primary-400 text-slate-400">
                 {tab.label}
               </span>
             }

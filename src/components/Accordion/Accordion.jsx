@@ -74,7 +74,7 @@ const Accordion = ({ status }) => {
                 </Button>
               </Tooltip>
             }
-            className='group-[.is-splitted]:rounded group-[.is-splitted]:shadow-none hover:group-[.is-splitted]:bg-blue-50 duration-100  transition-background-1000 group-[.is-splitted]:bg-slate-100 group-[.is-splitted]:first:rounded-t-2xl group-[.is-splitted]:last:rounded-b-2xl'
+            className='group-[.is-splitted]:rounded group-[.is-splitted]:shadow-none group-[.is-splitted]:bg-slate-100 group-[.is-splitted]:first:rounded-t-2xl group-[.is-splitted]:last:rounded-b-2xl'
             classNames={{
               indicator: "text-primary-400",
               title: "text-ellipsis overflow-hidden"
