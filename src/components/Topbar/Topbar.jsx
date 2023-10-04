@@ -1,4 +1,4 @@
-import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
+import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, Tooltip } from "@nextui-org/react";
 import { LogoIcon } from "../../assets/icons/LogoIcon";
 import { LogoutIcon } from "../../assets/icons/LogoutIcon";
 
@@ -20,9 +20,11 @@ const Topbar = () => {
             </NavbarBrand>
             <NavbarContent justify="end">
                 <NavbarItem>
-                    <Button isIconOnly as={Link} color="danger" href="#" variant="light">
-                        <LogoutIcon size={28} />
-                    </Button>
+                    <Tooltip color="danger" content="Log out" className="rounded-lg" placement="left">
+                        <Button isIconOnly as={Link} color="danger" href="#" variant="light">
+                            <LogoutIcon size={28} />
+                        </Button>
+                    </Tooltip>
                 </NavbarItem>
             </NavbarContent>
         </Navbar>
