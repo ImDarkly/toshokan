@@ -1,34 +1,56 @@
-import { Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, Tooltip } from "@nextui-org/react";
+import {
+    Button,
+    Link,
+    Navbar,
+    NavbarBrand,
+    NavbarContent,
+    NavbarItem,
+    Tooltip,
+} from "@nextui-org/react";
 import { LogoIcon } from "../../assets/icons/LogoIcon";
 import { LogoutIcon } from "../../assets/icons/LogoutIcon";
 
 const Topbar = () => {
     return (
-        <Navbar 
-            className="bg-slate-100" 
-            position="static" 
+        <Navbar
+            className="bg-slate-100"
+            position="static"
             maxWidth="full"
             classNames={{
-                wrapper: "px-4"
+                wrapper: "px-4",
             }}
-            >
+        >
             <NavbarBrand>
-                <LogoIcon size={28} styles={"text-white bg-primary-400 p-1 rounded-lg"} />
+                <LogoIcon
+                    size={28}
+                    styles={"text-white bg-primary-400 p-1 rounded-lg"}
+                />
             </NavbarBrand>
             <NavbarBrand className="justify-center">
                 <p className="font-medium text-2xl text-inherit">Toshokan</p>
             </NavbarBrand>
             <NavbarContent justify="end">
                 <NavbarItem>
-                    <Tooltip color="danger" content="Log out" className="rounded-lg" placement="left">
-                        <Button isIconOnly as={Link} color="danger" href="#" variant="light">
+                    <Tooltip
+                        color="danger"
+                        content="Log out"
+                        className="rounded-lg"
+                        placement="left"
+                    >
+                        <Button
+                            isIconOnly
+                            as={Link}
+                            color="danger"
+                            href="#"
+                            variant="light"
+                        >
                             <LogoutIcon size={28} />
                         </Button>
                     </Tooltip>
                 </NavbarItem>
             </NavbarContent>
         </Navbar>
-    )
-}
+    );
+};
 
 export default Topbar;
